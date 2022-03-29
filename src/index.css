@@ -1,10 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Roboto:wght@400;500&display=swap');
+
+:root {
+  --o-header-font-family: 'Roboto', sans-serif;
+  --o-body-font-family: 'Roboto Condensed', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  color: black;
+  position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, a {
+  font-family: var(--o-header-font-family);
+}
+
+p, li {
+  font-family: var(--o-body-font-family);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#menu {
+  font-family: var(--o-header-font-family);
 }
 
 code {

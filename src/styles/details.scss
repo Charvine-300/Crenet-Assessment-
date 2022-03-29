@@ -1,0 +1,109 @@
+@import 'mixinsVariables';
+
+
+/*==========  ID Rules  ==========*/
+#image-slider {
+    @include Container(100%, 100%, 0%);
+    padding-bottom: 20px;
+    @include flexSetup(wrap, row, normal);
+
+    .comic-images {
+        @include lazyLoad(150px);
+        margin-right: 10px;
+
+    }
+}
+#table {
+    @include flexSetup(wrap, column, center);
+
+    div {
+        width: 100%;
+        li {
+            text-transform: capitalize;
+        }
+    }
+
+    @include landscapeSet {
+        @include flexSetup(wrap, row, space-between);
+        align-items: normal;
+
+        div {
+            width: 45%;
+        }
+    }
+}
+
+
+/*==========  CLass Rules  ==========*/
+.details-wrapper {
+    min-height: 90vh;
+    border-top: 5px solid $MarvelRed;
+    border-bottom: 5px solid $MarvelRed;
+}
+
+.comic-details {
+    @include Container(80%, 100%, 0% auto);
+    @include flexSetup(wrap, column, space-around);
+    
+    .comic-thumbnail {
+        @include lazyLoad(324px);
+        margin: 40px 0px;
+        box-shadow: 16px 6px 20px 14px $BlackBack;
+    }
+    
+    .content {
+        text-align: left;
+        @include Container(80%, 100%, 20px auto);
+
+
+        h1, p {
+            text-align: center;
+        }
+    }
+
+    @include landscapeSet {
+        padding: 50px 0px;
+        .content {
+            @include Container(100%, 100%, 0% auto);
+
+            h1, p {
+                text-align: left;
+                max-width: 500px;
+            }
+        }   
+    }
+
+    @include minWidth(1180px) {
+        @include Container(80%, 100%, 0% auto);
+        @include flexSetup(wrap, row, center);
+
+        .comic-thumbnail {
+            margin: 0px auto;
+        }
+
+        .content {
+            @include Container(50%, 100%, 0% auto);;
+        }
+    }
+}
+
+/*==========  Element Rules  ==========*/
+button {
+    display: block;
+    position: relative;
+    background: $MarvelRed;
+    border: none;
+    outline: none !important;
+    @include MarvelButton(16px);
+    @include Container(166px, 46px, 40px auto);
+    
+    a {
+        color: $White;
+        font-weight: bolder;
+
+    }
+}
+
+::webkit-scrollbar {
+    display: none !important;
+  }

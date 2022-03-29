@@ -1,0 +1,68 @@
+@import 'mixinsVariables';
+
+
+
+/*==========  ID Rules  ==========*/
+#marvel-comics {
+  @include Container(80%, fit-content, 5% auto);
+
+  @include minWidth(820px) {
+    width:90%;
+
+    .comics-slider {
+      width: 100%;
+    }
+  }
+}
+
+#stroke {
+  @include Stroke;
+  position: relative;
+  
+  h2 {
+    text-transform: uppercase;
+  }
+}
+
+
+
+/*==========  Class Rules  ==========*/
+.comics-slider {
+  text-align: center;
+  @include Container(90%, 532px, 20px auto);
+  @include flexSetup(nowrap, row, space-between);
+  padding: 20px 0px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  .comic-info {
+    margin: 20px;
+
+    div {
+      @include lazyLoad(324px);
+    }
+  }
+}
+
+
+/*==========  Scrollbar Rules  ==========*/
+.comics-slider::-webkit-scrollbar {
+    height: 5px;
+}
+  
+/* Track */
+.comics-slider::-webkit-scrollbar-track {
+  background: $Background;
+  border-radius: 10px;
+}
+   
+/* Handle */
+.comics-slider::-webkit-scrollbar-thumb {
+  background: $MarvelRed; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.comics-slider::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+}

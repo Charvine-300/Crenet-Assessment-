@@ -1,0 +1,140 @@
+$Grey: #767676;
+$TrueBlack: #000000;
+$MarvelRed: #e62429;
+$BlackBack: #202020;
+$White: hsl(0, 0%, 100%);
+$Background: #e0e0e0;
+$Orange: #ffc55b;
+$WhiteSmoke: hsl(0, 0%, 90%);
+
+
+
+@mixin menuSelect {
+    &:hover {
+        cursor: pointer;
+        color: $Grey;
+    }
+    &:after {
+        content: '';
+        display: block;
+        transform: scaleX(0);  
+        border-bottom: solid 3px $MarvelRed;  
+        transition: transform 250ms ease-in-out;
+    }
+    &:hover:after {
+        transform: scaleX(1); 
+    }
+}
+
+@mixin MarvelButton($fold) {
+    &::before {
+        position: absolute;
+        content: '';
+        top: 0px;
+        right: 0px;
+        padding: 1px;
+        border-bottom: $fold solid $MarvelRed;
+        border-right: $fold solid $White;
+    }
+    
+    &::after {
+        position: absolute;
+        content: '';
+        bottom: 0px;
+        left: 0px;
+        padding: 1px;
+        border-top: $fold solid $MarvelRed;
+        border-left: $fold solid $White;
+    }
+}
+
+@mixin Stroke {
+    &::before {
+        left: 53px;
+        top: -8px;
+        -webkit-transform-origin: left bottom;
+        transform-origin: left bottom;
+    }
+
+    &::after {
+        left: -6px;
+        top: calc(100% + 3px);
+        -webkit-transform-origin: right top;
+        transform-origin: right top;
+    }
+
+    &::after, &::before {
+        background-color: #c6a972;
+        content: "";
+        display: block;
+        height: 2px;
+        position: absolute;
+        -webkit-transform: rotate(-45deg) skewX(45deg);
+        transform: rotate(-45deg) skewX(45deg);
+        width: 20px;
+    }
+}
+
+@mixin absoluteSet {
+    position:  absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+@mixin lazyLoad($padding) {
+    height: 0;
+    position: relative;
+    padding-bottom: $padding;
+    background-color: $Background;
+    img {
+        display: block;
+        object-fit: cover;
+        @include absoluteSet;
+    }
+}
+
+
+@mixin flexSetup( $wrap, $direction, $justify) {
+    display: flex;
+    flex-wrap: $wrap;
+    align-items: center;
+    flex-direction: $direction;
+    justify-content: $justify;
+}
+
+@mixin Container($width, $height, $margin) {
+    width: $width;
+    height: $height;
+    margin: $margin;
+}
+
+@mixin landscapeSet {
+    @media screen and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin desktopView {
+    @media screen and (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin nestHub($min, $max) {
+    @media screen and (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}
+
+@mixin minWidth($arch) {
+    @media screen and (min-width: $arch) {
+        @content;
+    }
+}
+
+@mixin borderDecor($digit) {
+    border-top-left-radius: $digit;
+    border-bottom-right-radius: $digit;
+}
