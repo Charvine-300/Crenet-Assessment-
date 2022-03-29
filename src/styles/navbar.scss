@@ -79,8 +79,8 @@ header {
         .profile-details {
             padding: 20px 0px;
             @include Container(100%, fit-content, 0% auto);
-            border-top: 1px solid $WhiteSmoke;
-            border-bottom: 1px solid $WhiteSmoke;
+            border-top: 0.5px solid $WhiteSmoke;
+            border-bottom: 0.5px solid $WhiteSmoke;
 
             h2 {
                 color: $Orange;
@@ -98,12 +98,11 @@ header {
             height: 52px;
             margin: 0px auto;
             text-transform: uppercase;
-            border-left: 0.5px solid $WhiteSmoke;
-            border-right: 0.5px solid $WhiteSmoke;
+            border-left: 0.5px solid $Grey;
+            border-right: 0.5px solid $Grey;
 
             li {
-                margin: 10px 17px;;
-                padding: 0px;
+                padding: 10px 17px;
                 font-size: 12px;
                 font-weight: bolder;
                 line-height: 20px;
@@ -113,6 +112,10 @@ header {
                     height: 28px;
                     margin-right: 10px;
                 }
+            }
+
+            :hover {
+                background-color: $TrueBlack;
             }
         }
 
@@ -128,7 +131,7 @@ header {
             min-height: 0;
             z-index: 0;
             text-align: center;
-            border-top: 1px solid $WhiteSmoke;
+            border-top: 0.5px solid $Grey;
             @include Container(100%, fit-content, 0);
 
 

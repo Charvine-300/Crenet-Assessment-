@@ -41,6 +41,14 @@
     div {
       @include lazyLoad(324px);
     }
+
+    :hover {
+      cursor: pointer;
+    }
+
+    h3, p {
+      color: $TrueBlack;
+    }
   }
 }
 

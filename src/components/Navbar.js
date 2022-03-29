@@ -29,13 +29,13 @@ function Navbar() {
   const [open, setOpen] = useState('close');
   const [slide, setSlide] = useState('');
   const menuItems =[
-    {id: 1, name: 'Videos'}, 
-    {id: 2, name: 'Characters'}, 
-    {id: 3, name: 'Comics'}, 
-    {id: 4, name: 'Movies'}, 
-    {id: 5, name: 'TV Shows'}, 
-    {id: 6, name: 'Games'}, 
-    {id: 7, name: 'News'}, 
+    {id: 1, name: 'Videos', link: 'https://www.marvel.com/watch'}, 
+    {id: 2, name: 'Characters', link: 'https://www.marvel.com/characters'}, 
+    {id: 3, name: 'Comics', link: 'https://www.marvel.com/comics'}, 
+    {id: 4, name: 'Movies', link: 'https://www.marvel.com/movies'}, 
+    {id: 5, name: 'TV Shows', link: 'https://www.marvel.com/tv-shows'}, 
+    {id: 6, name: 'Games', link: 'https://www.marvel.com/games'}, 
+    {id: 7, name: 'News', link: 'https://www.marvel.com/articles'}, 
     {id: 8, name: 'More' }
   ];
   const socialMedia = [
@@ -67,14 +67,23 @@ function Navbar() {
         <div className='desktop'> 
           <li> 
           <img src={SignIn} alt='Sign In Icon' className='icons' />
-            sign in 
+            <a href='https://www.marvel.com/signin?referer=https%3A%2F%2Fwww.marvel.com%2Fwatch'>
+              sign in 
+            </a>
+             &nbsp; | &nbsp;
+            <a href='https://www.marvel.com/register?referer=https%3A%2F%2Fwww.marvel.com%2Fwatch'>
+              join
+            </a>
+             
           </li> 
         </div>
         <Link to='/' id='align'> <img src={Logo} alt='Marvel Logo' /> </Link>
         <div className='desktop'> 
           <li> 
             <img src={MarvelRed} alt='Marvel Universe' className='icons' />
-            marvel unlimited <br/> subscribe
+            <a href='https://www.marvel.com/unlimited?cid=dcom_navigation_20210331_unlimited_top'>
+              marvel unlimited <br/> subscribe
+            </a>
           </li>
         </div>
         <a href='https://www.marvel.com/search'> 
@@ -87,8 +96,10 @@ function Navbar() {
           <ul id='menu'>
             {menuItems.map(item => (
               <li key={item.id}> 
-              {item.name}
-              <img src={Arrow} alt='Arrow icon' className='icons remove' />
+              <a href={item.link}>
+                {item.name}
+                <img src={Arrow} alt='Arrow icon' className='icons remove' />
+              </a>
             </li>
             ))}
           </ul>

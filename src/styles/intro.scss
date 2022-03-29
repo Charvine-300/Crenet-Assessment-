@@ -34,6 +34,7 @@
     @include Container(100%, 76px, 0);
     @include flexSetup(nowrap, row, normal);
     position: fixed;
+    z-index: 9999;
     bottom: 0;
 
     article {
@@ -113,6 +114,7 @@
             h5 {
                 margin: 5px 0px;
                 font-weight: bolder;
+                text-align: left;
             }
         }
     }
