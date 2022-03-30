@@ -10,7 +10,7 @@ function MarvelHQ() {
           <img src={HQ} alt='Marvel HQ' />
         </div>
         <div>
-          <h4 style={{'color': '#e62429', 'text-transform': 'uppercase', 'font-size': '1em'}}>
+          <h4 style={{'color': '#e62429', 'textTransform': 'uppercase', 'fontSize': '1em'}}>
             marvel hq
           </h4>
           <h2> 
