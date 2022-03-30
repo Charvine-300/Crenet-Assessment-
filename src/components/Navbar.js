@@ -19,6 +19,8 @@ import MarvelRed from '../img/red_universe.png';
 import SignIn from '../img/sign-in.svg';
 
 function Navbar() {
+
+  //Styling for close button in menu
   const CloseButton = {
     'width': '30px', 
     'height': '30px', 
@@ -26,8 +28,11 @@ function Navbar() {
     'marginRight': 'auto'
   };
 
+  //Dynamic variables for the menu setup in mobile view
   const [open, setOpen] = useState('close');
   const [slide, setSlide] = useState('');
+
+  //Details for each item in the menu navigation bar
   const menuItems =[
     {id: 1, name: 'Videos', link: 'https://www.marvel.com/watch'}, 
     {id: 2, name: 'Characters', link: 'https://www.marvel.com/characters'}, 
@@ -38,6 +43,8 @@ function Navbar() {
     {id: 7, name: 'News', link: 'https://www.marvel.com/articles'}, 
     {id: 8, name: 'More' }
   ];
+
+  //Details for each icon in the social media bar at the bottom of the menu in mobile view
   const socialMedia = [
     {id: 1, icon: Facebook, link: 'http://facebook.com/marvel'}, 
     {id: 2, icon: Twitter, link: 'http://twitter.com/marvel'}, 
@@ -48,6 +55,7 @@ function Navbar() {
     {id: 7, icon: Pinterest, link: 'https://www.pinterest.com/marvelofficial'}
   ]
 
+  //Function to dislpay/hide menu and add animation in mobile view
   function openMenu() {
     if(open === 'close') {
       setSlide('InLeft');

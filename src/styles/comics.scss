@@ -4,10 +4,10 @@
 
 /*==========  ID Rules  ==========*/
 #marvel-comics {
-  @include Container(80%, fit-content, 5% auto);
+  @include Container(80%, fit-content, 10% auto);
 
   @include minWidth(820px) {
-    width:90%;
+    @include Container(90%, fit-content, 5% auto);
 
     .comics-slider {
       width: 100%;

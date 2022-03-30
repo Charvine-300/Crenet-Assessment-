@@ -1,6 +1,7 @@
 import Comics from './Comics';
 import Intro from './Intro';
 import News from './News';
+import MarvelHQ from './MarvelHQ';
 
 
 function Homepage() {
@@ -9,6 +10,7 @@ function Homepage() {
       <Intro />
       <News  />
       <Comics />
+      <MarvelHQ />
     </div>
   );
 }

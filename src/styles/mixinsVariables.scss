@@ -1,3 +1,4 @@
+//SCSS Variables
 $Grey: #767676;
 $TrueBlack: #000000;
 $MarvelRed: #e62429;
@@ -8,7 +9,7 @@ $Orange: #ffc55b;
 $WhiteSmoke: hsl(0, 0%, 90%);
 
 
-
+//Animation On-hover menu item
 @mixin menuSelect {
     &:hover {
         cursor: pointer;
@@ -26,28 +27,30 @@ $WhiteSmoke: hsl(0, 0%, 90%);
     }
 }
 
-@mixin MarvelButton($fold) {
+//Styling for Marvel button
+@mixin MarvelButton($fold, $color) {
     &::before {
         position: absolute;
         content: '';
-        top: 0px;
+        top: -0.5px;
         right: 0px;
         padding: 1px;
         border-bottom: $fold solid $MarvelRed;
-        border-right: $fold solid $White;
+        border-right: $fold solid $color;
     }
     
     &::after {
         position: absolute;
         content: '';
-        bottom: 0px;
+        bottom: -0.5px;
         left: 0px;
         padding: 1px;
         border-top: $fold solid $MarvelRed;
-        border-left: $fold solid $White;
+        border-left: $fold solid $color;
     }
 }
 
+//Styling for golden stroke behind headings
 @mixin Stroke {
     &::before {
         left: 53px;
@@ -75,6 +78,7 @@ $WhiteSmoke: hsl(0, 0%, 90%);
     }
 }
 
+//Styling to set its recipient to absolute positioning
 @mixin absoluteSet {
     position:  absolute;
     top: 0;
@@ -83,6 +87,7 @@ $WhiteSmoke: hsl(0, 0%, 90%);
     right: 0;
 }
 
+//Background for images before they load
 @mixin lazyLoad($padding) {
     height: 0;
     position: relative;
@@ -95,7 +100,7 @@ $WhiteSmoke: hsl(0, 0%, 90%);
     }
 }
 
-
+//Styling to make recipient a flexbox
 @mixin flexSetup( $wrap, $direction, $justify) {
     display: flex;
     flex-wrap: $wrap;
@@ -104,36 +109,42 @@ $WhiteSmoke: hsl(0, 0%, 90%);
     justify-content: $justify;
 }
 
+//Styling for elements and items of various sizes and margins
 @mixin Container($width, $height, $margin) {
     width: $width;
     height: $height;
     margin: $margin;
 }
 
+//Stylings to add to layout at Landscape mode
 @mixin landscapeSet {
     @media screen and (orientation: landscape) {
         @content;
     }
 }
 
+//Stylings to add to layout at a minimum width of 1024px
 @mixin desktopView {
     @media screen and (min-width: 1024px) {
         @content;
     }
 }
 
+//Styling for a set of devices that fall within the range set
 @mixin nestHub($min, $max) {
     @media screen and (min-width: $min) and (max-width: $max) {
         @content;
     }
 }
 
+//Styling for layout to show at programmer's choice
 @mixin minWidth($arch) {
     @media screen and (min-width: $arch) {
         @content;
     }
 }
 
+//Border styling for some parent elements
 @mixin borderDecor($digit) {
     border-top-left-radius: $digit;
     border-bottom-right-radius: $digit;

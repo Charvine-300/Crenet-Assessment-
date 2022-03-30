@@ -3,8 +3,6 @@ import News1 from '../img/latest_news_1.jpg';
 import News2 from '../img/latest_news_2.jpg';
 import News3 from '../img/latest_news_3.jpg';
 import News4 from '../img/latest_news_4.jpeg';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
 
 
 function News() {

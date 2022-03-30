@@ -94,7 +94,7 @@ button {
     background: $MarvelRed;
     border: none;
     outline: none !important;
-    @include MarvelButton(16px);
+    @include MarvelButton(16px, $White);
     @include Container(166px, 46px, 40px auto);
     
     a {
