@@ -1,6 +1,6 @@
 Crenet Technical Assessment | Captain Marvel Comics
 
-Guidelines to building the Web Application:
+Steps taken to build the Web Application:
   - Created a React application.
 
   - Installed React-Router-DOM.
