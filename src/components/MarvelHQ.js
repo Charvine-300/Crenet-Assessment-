@@ -17,7 +17,7 @@ function MarvelHQ() {
             Play games and read comics on MarvelHQ.com
           </h2>
           <button>
-            <a href=''> check it out </a>
+            <a href='https://www.marvelhq.com/'> check it out </a>
           </button>
         </div>
       </div>
