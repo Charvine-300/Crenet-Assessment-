@@ -5,7 +5,8 @@
 /*==========  ID Rules  ==========*/
 #marvel-hq {
     @include Container(100%, 360px, 0 auto);
-    @include flexSetup(wrap, column, normal);
+    @include flexSetup(nowrap, column, space-around); 
+  
 
     img {
         @include Container(100%, 100%, 0 auto);

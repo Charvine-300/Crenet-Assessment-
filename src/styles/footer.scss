@@ -1,0 +1,129 @@
+@import 'mixinsVariables';
+
+
+
+/*==========  ID Rules  ==========*/
+#insider {
+    flex-direction: column;
+
+    @include landscapeSet {
+        flex-direction: row ;
+    }
+
+    @include minWidth(1024px) {
+        flex-direction: column;
+    }
+}
+#others {
+    list-style-type: none;
+    color: $Grey;
+    padding: 0;
+    @include Container(60%, 100%, 20px auto);
+
+    li {
+        display: inline;
+        padding: 5px 10px;
+        font-size: 13px;
+        text-align: center;
+    }
+}
+
+#footer-logo {
+    @include Container(50px, 100px, 20px auto);
+}
+
+#social-links {
+    @include Container(90%, fit-content, 10px auto);
+    padding: 0px;
+    @include flexSetup(nowrap, row, space-between);
+
+    img {
+        @include Container(20px, 20px, 0);
+    }
+}
+
+
+
+/*==========  Class Rules  ==========*/
+.images {
+    flex-direction: column !important;
+
+    @include minWidth(1024px) {
+        width: 80% !important;
+    }
+
+    @include minWidth(1336px) {
+        width: 60% !important;
+    }
+}
+
+.image-words {
+    @include flexSetup(nowrap, row, space-around);
+    
+    img {
+        @include Container(80px, 30px, 0);
+    }
+    
+    div {
+        @include Container(65%, 100%, 0);
+        
+        p {
+            color: $Grey;
+            margin-top: 0px;
+        }
+    }
+}
+
+.footer-info {
+    padding: 20px 0px;
+    @include Container(90%, 100%, 0);
+    @include flexSetup(nowrap, row, normal);
+    align-items: normal;
+    border-bottom: 0.5px solid $Grey;
+    
+    h2 {
+        font-size: 15px;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+    }
+    
+    ul {
+        list-style-type: none;
+        padding: 20px 0px 20px 5%;
+        @include Container(50%, 100%, 0);
+        
+        li {
+            color: $White;
+            padding: 10px 0px;
+            font-weight: bolder;
+            text-transform: uppercase;
+        }
+    }
+
+    @include minWidth(1024px) {
+        @include Container(40%, 100%, 0 auto);
+        border-bottom: none;
+    }
+}
+
+
+/*==========  Element Rules  ==========*/
+footer {
+    color: $White;
+    padding: 10% 0%;
+    background-color: $BlackBack;
+    @include Container(100%, fit-content, 0);
+    margin-bottom: 40px;
+    @include flexSetup(nowrap, column, center);
+    align-items: normal;
+
+    @include minWidth(1024px) {
+        margin-bottom: 0px;
+        padding: 5% 0%;
+        @include flexSetup(wrap, row, space-around);
+    }
+}
+
+
+
+/*==========  Animation and Pseudo Rules  ==========*/
