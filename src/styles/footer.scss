@@ -115,7 +115,6 @@ footer {
     @include Container(100%, fit-content, 0);
     margin-bottom: 40px;
     @include flexSetup(nowrap, column, center);
-    align-items: normal;
 
     @include minWidth(1024px) {
         margin-bottom: 0px;
